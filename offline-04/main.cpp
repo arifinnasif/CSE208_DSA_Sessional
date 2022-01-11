@@ -66,7 +66,7 @@ int main(int argc, char** argv) {
 				res_cap[game_index][team_index[i]] = INT_MAX;
 				
 				adj[game_index].push_back(team_index[j]);
-				adj[team_index[i]].push_back(game_index);
+				adj[team_index[j]].push_back(game_index);
 				res_cap[game_index][team_index[j]] = INT_MAX;
 
 				total_out_arc += g[i][j];
