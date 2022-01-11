@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
 		}
 		
 		if(is_trivial) {
-			cout<<teamname[k]<<endl;
+			cout<<teamname[k]<<" is eliminated"<<endl;
 			continue;
 		}
 
@@ -77,7 +77,7 @@ int main(int argc, char** argv) {
 		
 		// cout<<teamname[k]+"'s max_flow = "<<max_flow<<endl;
 
-		if (total_out_arc > max_flow) cout<<teamname[k]<<endl;
+		if (total_out_arc > max_flow) cout<<teamname[k]<<" is eliminated"<<endl;
 	}
 
 	return 0;
