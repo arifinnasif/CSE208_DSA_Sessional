@@ -6,11 +6,8 @@ using namespace std;
 
 typedef pair<int, int> PII;
 
-vector<int> parent;
-vector<vector<int>> adj;
-vector<vector<int>> res_cap;
 
-int bfs(vector<vector<int>> adj, vector<vector<int>> res_cap, int source, int sink, vector<int>& parent) {
+int bfs(vector<vector<int>> adj, vector<vector<int>>& res_cap, int source, int sink, vector<int>& parent) {
 	// Initialization
 	// Assume parent is initialized before. If not, uncomment following, set n to number of nodes
 	// parent.assign(parent.begin(), parent.end(), PARENT_NOTSET);
@@ -45,14 +42,14 @@ int bfs(vector<vector<int>> adj, vector<vector<int>> res_cap, int source, int si
 }
 
 
-int find_aug(vector<vector<int>> adj, vector<vector<int>> res_cap, int source, int sink, vector<int>& parent) {
+int find_aug(vector<vector<int>> adj, vector<vector<int>>& res_cap, int source, int sink, vector<int>& parent) {
 	fill(parent.begin(), parent.end(), PARENT_NOTSET);
 	parent[source] = PARENT_NONE;
 	return bfs(adj, res_cap, source, sink, parent);
 }
 
 
-int get_max_flow(vector<vector<int>> adj, vector<vector<int>> res_cap, int source, int sink) {
+int get_max_flow(vector<vector<int>> adj, vector<vector<int>>& res_cap, int source, int sink) {
 	int number_of_nodes = adj.size();
 	vector<int> parent(number_of_nodes);
 	int net_flow = 0;
